@@ -7,29 +7,29 @@ a kedvezmény helyett legyen szervízdíj, amit hozzá kell adni a végössdzegh
 public class Nyugta3 {
 
     public static void main(String[] args) {
-        String csillagok = "********************";
-        System.out.println(csillagok);
+        String csillagok = "******************";
+        alakzatkiiratas(csillagok);
         System.out.printf("%14s\n", "Nyugta 3");
-        System.out.println(csillagok);
+        alakzatkiiratas(csillagok);
         
         final String HUF = "Ft";
         int tetel1 = 350, tetel2 = 90, tetel3 = 1320;
-        System.out.printf("%10s: %5d %s\n", "Tétel 1", tetel1, HUF);
-        System.out.printf("%10s: %5d %s\n", "Tétel 2", tetel2, HUF);
-        System.out.printf("%10s: %5d %s\n", "Tétel 3", tetel3, HUF);
+        penzkiiratas("Tétel1", tetel1, HUF);
+        penzkiiratas("Tétel2", tetel2, HUF);
+        penzkiiratas("Tétel3", tetel3, HUF);
 
         String duplaVonal = "====================";
-        System.out.println(duplaVonal);
+        alakzatkiiratas(HUF);
         
         int osszesen = tetel1 + tetel2 + tetel3;
-        System.out.printf("%10s: %5d %s\n", "Összesen", osszesen, HUF);
+        penzkiiratas("Összesen", osszesen, HUF);
         
         String szaggatottVonal = "--------------------";
-        System.out.println(szaggatottVonal);
+        alakzatkiiratas(HUF);
         
         int szervizDijMertek = 10;
         int szervizDij = osszesen / szervizDijMertek;
-        System.out.printf("%10s: %5d %s\n", "Szervízdíj", szervizDij, HUF);
+        penzkiiratas("Szervízdíj", osszesen, HUF);
         System.out.printf("(%d%%)\n", szervizDijMertek);
         
         System.out.println(duplaVonal);
@@ -41,19 +41,19 @@ public class Nyugta3 {
         
         System.out.println(szaggatottVonal);
         
-        System.out.println("");
+        alakzatkiiratas("");
         String rovidVonal = "_______";
-        System.out.print(rovidVonal);
+        alakzatkiiratas(rovidVonal);
         String rovidVonalValaszto = "      ";
-        System.out.print(rovidVonalValaszto);
-        System.out.println(rovidVonal);
-        System.out.print(" Dátum");
-        System.out.print(rovidVonalValaszto);
-        System.out.println("   Név");
+        alakzatkiiratas(rovidVonalValaszto);
+        alakzatkiiratas(rovidVonal);
+        alakzatkiiratas(" Dátum");
+        alakzatkiiratas(rovidVonalValaszto);
+        alakzatkiiratas("   Név");
         
-        System.out.println(csillagok);    
-        System.out.println("        CÉG");
-        System.out.println(csillagok);
+        alakzatkiiratas(csillagok);
+        alakzatkiiratas("        CÉG");
+        alakzatkiiratas(csillagok);
     }
     private static void penzkiiratas(String str, int osszeg, String penznem){
         System.out.printf("%10s:  %5d %s\n", str, osszeg, penznem);
