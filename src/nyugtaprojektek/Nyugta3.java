@@ -21,7 +21,7 @@ public class Nyugta3 {
         String duplaVonal = alakzatsorozat("=", 20);
         alakzatkiiratas(HUF);
         
-        int osszesen = tetel1 + tetel2 + tetel3;
+        int osszesen = osszeadas(tetel1, tetel2, tetel3);
         penzkiiratas("Összesen", osszesen, HUF);
         
         String szaggatottVonal = alakzatsorozat("-", 20);
@@ -33,7 +33,7 @@ public class Nyugta3 {
         System.out.printf("(%d%%)\n", szervizDijMertek);
         
         System.out.println(duplaVonal);
-        int fizetendo = osszesen + szervizDij;
+        int fizetendo = osszeadas(osszesen, szervizDij, 0);
         System.out.printf("%10s:  %d %s\n", "Fizetendő", fizetendo, HUF);
         double euro = fizetendo / 350.0;
         final String eur = "\u20ac";
@@ -44,7 +44,7 @@ public class Nyugta3 {
         alakzatkiiratas("");
         String rovidVonal = alakzatsorozat("_", 7);
         alakzatkiiratas(rovidVonal);
-        String rovidVonalValaszto = "      ";
+        String rovidVonalValaszto = alakzatsorozat(" ", 6);
         alakzatkiiratas(rovidVonalValaszto);
         alakzatkiiratas(rovidVonal);
         alakzatkiiratas(" Dátum");
@@ -67,5 +67,9 @@ public class Nyugta3 {
             alakzatlanc += alakzat;
         }
     return alakzatlanc;
+    }
+    private static int osszeadas(int a, int b, int c){
+    int osszeg = a + b + c;
+    return osszeg;
     }
 }
