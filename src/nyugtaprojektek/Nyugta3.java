@@ -7,7 +7,7 @@ a kedvezmény helyett legyen szervízdíj, amit hozzá kell adni a végössdzegh
 public class Nyugta3 {
 
     public static void main(String[] args) {
-        String csillagok = "******************";
+        String csillagok = alakzatsorozat("*", 20);
         alakzatkiiratas(csillagok);
         System.out.printf("%14s\n", "Nyugta 3");
         alakzatkiiratas(csillagok);
@@ -18,13 +18,13 @@ public class Nyugta3 {
         penzkiiratas("Tétel2", tetel2, HUF);
         penzkiiratas("Tétel3", tetel3, HUF);
 
-        String duplaVonal = "====================";
+        String duplaVonal = alakzatsorozat("=", 20);
         alakzatkiiratas(HUF);
         
         int osszesen = tetel1 + tetel2 + tetel3;
         penzkiiratas("Összesen", osszesen, HUF);
         
-        String szaggatottVonal = "--------------------";
+        String szaggatottVonal = alakzatsorozat("-", 20);
         alakzatkiiratas(HUF);
         
         int szervizDijMertek = 10;
@@ -42,7 +42,7 @@ public class Nyugta3 {
         System.out.println(szaggatottVonal);
         
         alakzatkiiratas("");
-        String rovidVonal = "_______";
+        String rovidVonal = alakzatsorozat("_", 7);
         alakzatkiiratas(rovidVonal);
         String rovidVonalValaszto = "      ";
         alakzatkiiratas(rovidVonalValaszto);
@@ -60,5 +60,12 @@ public class Nyugta3 {
     }
     private static void alakzatkiiratas(String str){
         System.out.println(str);
+    }
+    private static String alakzatsorozat(String alakzat, int hanydb){
+        String alakzatlanc = "";
+        for (int i = 0; i < hanydb; i++) {
+            alakzatlanc += alakzat;
+        }
+    return alakzatlanc;
     }
 }
