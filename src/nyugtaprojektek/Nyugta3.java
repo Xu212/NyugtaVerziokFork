@@ -55,5 +55,10 @@ public class Nyugta3 {
         System.out.println("        CÉG");
         System.out.println(csillagok);
     }
-
+    private static void penzkiiratas(String str, int osszeg, String penznem){
+        System.out.printf("%10s:  %5d %s\n", str, osszeg, penznem);
+    }
+    private static void alakzatkiiratas(String str){
+        System.out.println(str);
+    }
 }
